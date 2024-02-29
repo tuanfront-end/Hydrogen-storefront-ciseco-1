@@ -22,9 +22,12 @@ export async function loader({context}: LoaderFunctionArgs) {
 
 export default function Homepage() {
   const data = useLoaderData<typeof loader>();
+
   return (
     <div className="home">
+      <h1>Featured collection</h1>
       <FeaturedCollection collection={data.featuredCollection} />
+      <hr />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
   );
