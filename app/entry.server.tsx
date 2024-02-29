@@ -11,6 +11,12 @@ export default async function handleRequest(
   remixContext: EntryContext,
 ) {
   const {nonce, header, NonceProvider} = createContentSecurityPolicy();
+  createContentSecurityPolicy({
+    connectSrc: [
+      // (ie. 'wss://<your-ngrok-domain>.app:*')
+      'wss://refined-starfish-verbally.ngrok-free.app:*',
+    ],
+  });
 
   const body = await renderToReadableStream(
     <NonceProvider>
