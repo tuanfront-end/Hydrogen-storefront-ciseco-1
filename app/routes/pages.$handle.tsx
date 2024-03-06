@@ -36,7 +36,7 @@ export default function Page() {
   );
 }
 
-const PAGE_QUERY = `#graphql
+export const PAGE_QUERY = `#graphql
   query Page(
     $language: LanguageCode,
     $country: CountryCode,
